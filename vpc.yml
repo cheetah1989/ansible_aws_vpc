@@ -52,6 +52,7 @@
       
     - name: Create Route Table for Public Subnet.
       amazon.aws.ec2_vpc_route_table:
+        region: "{{region}}"
         vpc_id: "{{vpc_details.vpc.id}}"
         subnets:
           - "{{pub_sub1_out.subnet.id}}"
