@@ -6,8 +6,8 @@ vpc_name: "ansi-vpc"
 vpcCidr: "172.10.0.0/16"
 
 # Subnet CIDR
-PubSubCidr: "172.10.1.0/24"
-PubSubCidr: "172.10.2.0/24"
+PubSubCidr1: "172.10.1.0/24"
+PubSubCidr2: "172.10.2.0/24"
 
 # Region name
 region: "us-east-1"
