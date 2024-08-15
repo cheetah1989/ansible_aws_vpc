@@ -1,0 +1,7 @@
+vpc_id: vpc-0f88d60905434a2ca
+pub_sub_id: subnet-00ba233e73b6288e8
+priv_sub_id: subnet-0dadfe9b470f77a1a
+igw_id: igw-0ef8a6d06dda34661
+priv_rt_id: rtb-0ada15ffe0b787658
+nat_gw_id: nat-01afec732a8ad50c0
+rt_pub_id: rtb-0467b0745c0325825
