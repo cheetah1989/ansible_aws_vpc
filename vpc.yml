@@ -26,7 +26,7 @@
          region: "{{region}}"
          az: "{{zone1}}"
          map_public: true
-         cidr_block: "{{PubSubCidr1}}"
+         cidr: "{{PubSubCidr1}}"
          tags:
           Name: Public subnet us-east-1a
       register: pub_sub1_out
