@@ -61,4 +61,26 @@
             gateway_id: "{{igw_out.gateway_id}}"
         tags:
           Name: RT for Pub Subnet
-      register: rt_out
+      register: rt_pub_out
+
+    - name: Create NAT Gateway in Pub Subnet.
+      amazon.aws.ec2_vpc_nat_gateway:
+        state: "{{state}}"
+        region: "{{region}}"
+        subnet_id: "{{pub_sub1_out.subnet.id}}"
+        if_exist_do_not_create: true
+        wait: yes
+      register: nat_gw_out
+    
+    - name: Create Route Table for Private Subnet.
+      amazon.aws.ec2_vpc_route_table:
+        region: "{{region}}"
+        vpc_id: "{{vpc_details.vpc.id}}"
+        subnets:
+          - "{{priv_sub1_out.subnet.id}}"
+        routes:
+          - dest: 0.0.0.0/0
+            gateway_id: "{{nat_gw_out.nat_gateway_id}}"
+        tags:
+          Name: RT for Priv Subnet
+      register: rt_priv_out
