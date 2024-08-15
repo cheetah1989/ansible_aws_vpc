@@ -98,5 +98,5 @@
     
     - name: Creating variable files for all VPC component outputs
       copy:
-        content: "{{vpc_details.vpc.id}}\n{{pub_sub1_out.subnet.id}}\n{{priv_sub1_out.subnet.id}}\n{{igw_out.gateway_id}}\n{{rt_priv_out.route_table.id}}\n{{nat_gw_out.nat_gateway_id}}\n{{rt_pub_out.route_table.id}}"
+        content: "vpc_id: {{vpc_details.vpc.id}}\npub_sub_id: {{pub_sub1_out.subnet.id}}\npriv_sub_id: {{priv_sub1_out.subnet.id}}\nigw_id: {{igw_out.gateway_id}}\npriv_rt_id: {{rt_priv_out.route_table.id}}\nnat_gw_id: {{nat_gw_out.nat_gateway_id}}\nrt_pub_id: {{rt_pub_out.route_table.id}}"
         dest: vars/vpc_comp_ids
