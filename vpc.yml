@@ -1,13 +1,13 @@
 ---
- - hosts: localhost
-   connections: local
-   gather_facts: False
-   tasks:
-     - name: Import VPC variables
-       include_vars: vars/vpc_setup
+- hosts: localhost
+  connections: local
+  gather_facts: False
+  tasks:
+    - name: Import VPC variables
+      include_vars: vars/vpc_setup
      
-     - name: Create VPC
-       ec2_vpc.net:
+    - name: Create VPC
+      ec2_vpc.net:
           name: "{{vpc_name}}"
           cidr_block: "{{vpcCidr}}"
           region: "{{region}}"
@@ -15,5 +15,5 @@
           dns_hostnames: yes
           tenancy: default
           state: "{{state}}"
-       register: vpc_details
+      register: vpc_details
       
