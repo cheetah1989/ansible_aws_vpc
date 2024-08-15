@@ -1,0 +1,21 @@
+# Variable Names
+
+vpc_name: "ansi-vpc"
+
+# VPC CIDR
+vpcCidr: "172.10.0.0/16"
+
+# Subnet CIDR
+PubSubCidr: "172.10.1.0/24"
+PubSubCidr: "172.10.2.0/24"
+
+# Region name
+region: "us-east-1"
+
+# AZ
+zone1: "us-east-1a"
+zone2: "us-east-1b"
+zone3: "us-east-1c"
+
+#State 
+state: present
