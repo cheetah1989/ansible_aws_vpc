@@ -85,13 +85,13 @@
           Name: RT for Priv Subnet
       register: rt_priv_out
 
-- debug:
-   var: "{{item}}"
-   loop:
-     - vpc_details.vpc.id
-     - pub_sub1_out.subnet.id
-     - priv_sub1_out.subnet.id
-     - igw_out.gateway_id
-     - rt_priv_out.route_table.id
-     - nat_gw_out.nat_gateway_id
-     - rt_pub_out.route_table.id
+    - debug:
+       var: "{{item}}"
+       loop:
+        - vpc_details.vpc.id
+        - pub_sub1_out.subnet.id
+        - priv_sub1_out.subnet.id
+        - igw_out.gateway_id
+        - rt_priv_out.route_table.id
+        - nat_gw_out.nat_gateway_id
+        - rt_pub_out.route_table.id
