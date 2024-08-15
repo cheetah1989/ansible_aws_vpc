@@ -95,3 +95,8 @@
         - rt_priv_out.route_table.id
         - nat_gw_out.nat_gateway_id
         - rt_pub_out.route_table.id
+    
+    - name: Creating variable files for all VPC component outputs
+      copy:
+        content: "{{vpc_details.vpc.id}}\n{{pub_sub1_out.subnet.id}}\n{{priv_sub1_out.subnet.id}}\n{{igw_out.gateway_id}}\n{{rt_priv_out.route_table.id}}\n{{nat_gw_out.nat_gateway_id}}\n{{rt_pub_out.route_table.id}}"
+        output: vars/vpc_comp_ids
