@@ -17,7 +17,7 @@
       register: vpc_details
 
     - debug:
-      var: vpc_details
+       var: vpc_details
 
     - name: Public Subnet 1
       amazon.aws.ec2_vpc_subnet: 
