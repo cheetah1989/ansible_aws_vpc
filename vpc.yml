@@ -20,7 +20,7 @@
       var: vpc_details
 
     - name: Public Subnet 1
-       amazon.aws.ec2_vpc_subnet: 
+      amazon.aws.ec2_vpc_subnet: 
          state: "{{vars/vpc_setup.state}}"
          vpc_id: "{{vpc_details.id}}"
          region: "{{vars/vpc_setup.region}}"
