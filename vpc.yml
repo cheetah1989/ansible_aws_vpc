@@ -50,3 +50,14 @@
           Name: IGW for Public Subnet  
       register: igw_out
       
+    - name: Create Route Table for Public Subnet.
+      amazon.aws.ec2_vpc_route_table:
+        vpc_id: "{{vpc_details.vpc.id}}"
+        subnets:
+          - "{{pub_sub1_out.subnet.id}}"
+        routes:
+          dest: 0.0.0.0/0
+          gateway_id: "{{igw_out.gateway_id}}"
+        tags:
+          Name: RT for Pub Subnet
+      register: rt_out
