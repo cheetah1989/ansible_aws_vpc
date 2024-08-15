@@ -40,4 +40,4 @@
          cidr: "{{PrivSubCidr1}}"
          tags:
           Name: Private subnet us-east-1a
-      register: pub_sub1_out
+      register: priv_sub1_out
