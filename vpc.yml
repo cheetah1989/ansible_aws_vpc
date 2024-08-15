@@ -16,14 +16,17 @@
           state: "{{state}}"
       register: vpc_details
 
-    - name: "Public Subnet 1" 
-      amazon.aws.ec2_vpc_subnet: 
-        state: "{{vars/vpc_setup.state}}"
-        vpc_id: "{{vpc_details.id}}"
-        region: "{{vars/vpc_setup.region}}"
-        az: "{{vars/vpc_setup.zone1}}"
-        map_public: true
-        cidr_block: "{{vars/vpc_setup.PubSubCidr1}}"
-        tags:
+    - debug:
+      var: vpc_details
+
+    - name: Public Subnet 1
+       amazon.aws.ec2_vpc_subnet: 
+         state: "{{vars/vpc_setup.state}}"
+         vpc_id: "{{vpc_details.id}}"
+         region: "{{vars/vpc_setup.region}}"
+         az: "{{vars/vpc_setup.zone1}}"
+         map_public: true
+         cidr_block: "{{vars/vpc_setup.PubSubCidr1}}"
+         tags:
           Name: Public subnet us-east-1a
       register: pub_sub1_out
