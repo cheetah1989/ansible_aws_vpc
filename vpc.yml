@@ -30,3 +30,14 @@
          tags:
           Name: Public subnet us-east-1a
       register: pub_sub1_out
+    
+    - name: Private Subnet 1
+      amazon.aws.ec2_vpc_subnet: 
+         state: "{{state}}"
+         vpc_id: "{{vpc_details.vpc.id}}"
+         region: "{{region}}"
+         az: "{{zone2}}"
+         cidr: "{{PrivSubCidr1}}"
+         tags:
+          Name: Private subnet us-east-1a
+      register: pub_sub1_out
