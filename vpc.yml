@@ -87,7 +87,7 @@
 
     - debug:
        var: "{{item}}"
-       loop:
+      loop:
         - vpc_details.vpc.id
         - pub_sub1_out.subnet.id
         - priv_sub1_out.subnet.id
