@@ -1,0 +1,9 @@
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+  - name: Bashion hosts values
+    include_vars: /vars/bashion_setup.txt
+  
+  - name: VPC component values
+    include_vars: /vars/vpc
